@@ -1,0 +1,34 @@
+ticket:
+    path:     /
+    defaults: { _controller: "TicketBundle:Ticket:index" }
+
+ticket_show:
+    path:     /{id}/show
+    defaults: { _controller: "TicketBundle:Ticket:show" }
+
+ticket_new:
+    path:     /new
+    defaults: { _controller: "TicketBundle:Ticket:new" }
+
+ticket_create:
+    path:     /create
+    defaults: { _controller: "TicketBundle:Ticket:create" }
+    methods:  POST
+
+ticket_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TicketBundle:Ticket:edit" }
+
+ticket_update:
+    path:     /{id}/update
+    defaults: { _controller: "TicketBundle:Ticket:update" }
+    methods:  [POST, PUT]
+
+ticket_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TicketBundle:Ticket:delete" }
+    methods:  [POST, DELETE]
+
+mi_ticket:
+    path: /miticket
+    defaults: {_controller: "TicketBundle:Ticket:miticket"}

@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <h2>
+            Ticket
+        </h2>
+    </div>  
+</div>  
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="portlet light ">
+            <div class="portlet-title tabbable-line">
+                <div class="caption">
+                    <i class="fa fa-user font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">Ticket</span>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#tab_1_1" class="active" data-toggle="tab">Ticket</a>
+                    </li>
+                </ul>
+            </div>
+            {{ form_start(form) }}
+                <div class="portlet-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active">
+                            <div class="scroller" data-always-visible="1" data-rail-visible="0">
+                                <ul class="feeds">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group form-md-line-input has-success">
+                                            <div class="input-icon">
+                                                {{ form_widget(form.proyecto,{'attr': {'class':'form-control'},'required':'true'}) }}
+                                                <label for="proyecto">Proyecto</label>
+                                                <i class="fa fa-sort-down"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-md-line-input has-success">
+                                            <div class="input-icon">
+                                                {{ form_widget(form.sistemaOperativo,{'attr': {'class':'form-control'},'required':'true'}) }}
+                                                <label for="sistemaOperativo">Sistema Operativo</label>
+                                                <i class="fa fa-sort-down"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-md-line-input has-success">
+                                            <div class="input-icon">
+                                                {{ form_widget(form.navegador,{'attr': {'class':'form-control'},'required':'true'}) }}
+                                                <label for="navegador">Navegador</label>
+                                                <i class="fa fa-sort-down"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-md-line-input has-success">
+                                            <div class="input-icon">
+                                                {{ form_widget(form.url,{'attr': {'class':'form-control','placeholder':'Direccion'}}) }}
+                                                <label for="url">URL</label>
+                                                <i class="fa fa-pencil"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-md-line-input has-success">
+                                            <div class="input-icon">
+                                                {{ form_widget(form.descripcion,{'attr': {'class':'form-control'}}) }}
+                                                <label for="descripcion">Descripcion</label>
+                                                <i class="fa fa-pencil"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                </ul>
+            {{ form_widget(form._token) }}  
+                         
+                                <div class="col-xs-12">
+                                    <button class="btn btn-success" type="submit" id="sendform"><i class="fa fa-plus"></i>&nbsp;Crear</button>
+                                </div>
+                          
+                                </form>     
+                            </div>
+                        </div>
+                                            
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

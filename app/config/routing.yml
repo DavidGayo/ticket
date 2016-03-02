@@ -1,0 +1,21 @@
+genaral:
+    resource: "@GeneralBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ticket:
+    resource: "@TicketBundle/Resources/config/routing.yml"
+    prefix:   /
+
+usuario:
+    resource: "@UsuarioBundle/Resources/config/routing.yml"
+    prefix:   /
+
+login:
+    pattern:   /login
+    defaults:  { _controller: UsuarioBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout

@@ -1,0 +1,14 @@
+<tbody>
+    {% for entity in entities %}
+        <tr>
+            <td class="oculto"><a href="{{ path('usuario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.userName }}</td>
+            <td>{{ entity.rol }}</td>
+            <td>
+                <a href="{{ path('usuario_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
+                                
+                <a href="{{ path('usuario_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
+            </td>
+        </tr>
+    {% endfor %}
+</tbody>  

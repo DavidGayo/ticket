@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h2><a href="{{ path('proyecto') }}">
+                 Proyecto:
+                </a>
+                Vista
+            </h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light portlet-fit ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-eye font-yellow"></i>
+                        <span class="caption-subject font-yellow bold uppercase">Caracteristicas</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="general-item-list">
+                        
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Nombre del Proyecto:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.nombre }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Descripcion:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.descripcion }}
+                                </div>
+                            </div>
+                        </div><br />
+
+                        {{ form(delete_form) }}
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

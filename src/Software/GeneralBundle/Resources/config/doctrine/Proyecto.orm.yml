@@ -1,0 +1,25 @@
+Software\GeneralBundle\Entity\Proyecto:
+    type: entity
+    table: null
+    repositoryClass: Software\GeneralBundle\Entity\ProyectoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+        descripcion:
+            type: text
+    oneToMany:
+        ticket:
+            targetEntity: Software\TicketBundle\Entity\Ticket
+            mappedBy: Proyecto
+    manyToMany:
+        usuario:
+            targetEntity: Software\UsuarioBundle\Entity\Usuario
+            mappedBy: Proyecto
+    lifecycleCallbacks: {  }

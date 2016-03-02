@@ -1,0 +1,43 @@
+Software\UsuarioBundle\Entity\Usuario:
+    type: entity
+    table: null
+    repositoryClass: Software\UsuarioBundle\Entity\UsuarioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        userName:
+            type: string
+            length: '20'
+        nombre:
+           type: string
+           length: '50'
+        password:
+            type: string
+            length: '125'
+        salt:
+            type: string
+            length: '125'
+        rol:
+            type: string
+            length: '50'
+    manyToMany:
+        proyecto:
+            targetEntity: Software\GeneralBundle\Entity\Proyecto
+            inversedBy: usuario 
+            joinTable:
+                name: proy_usua
+                joinColumns:
+                    usuario_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    proyecto_id:
+                        referencedColumnName: id
+    #oneToMany:
+        #ticket:
+            #targetEntity: Software\TicketBundle\Entity\Ticket
+            #mappedBy: Usuario
+    lifecycleCallbacks: {  }

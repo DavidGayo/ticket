@@ -1,0 +1,42 @@
+Software\TicketBundle\Entity\Ticket:
+    type: entity
+    table: null
+    repositoryClass: Software\TicketBundle\Entity\TicketRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        sistemaOperativo:
+            type: string
+            length: '100'
+        navegador:
+            type: string
+            length: '50'
+        url:
+            type: string
+            length: 255
+        descripcion:
+            type: text
+        aplica:
+            type: boolean
+        resuelto:
+            type: boolean
+        usuarioCreo:
+            type: integer
+    manyToOne:
+        proyecto:
+            targetEntity: Software\GeneralBundle\Entity\Proyecto
+            inversedBy: ticket
+            joinColumn:
+                name: proyecto_id
+                referencedColumnName: id
+        #usuario:
+            #targetEntity: Software\UsuarioBundle\Entity\Usuario
+            #inversedBy: ticket
+            #joinColumn:
+                #name: usuario_id
+                #referencedColumnName: id
+    lifecycleCallbacks: {  }

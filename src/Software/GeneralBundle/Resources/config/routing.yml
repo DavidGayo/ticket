@@ -1,0 +1,7 @@
+genaral_proyecto:
+    resource: "@GeneralBundle/Resources/config/routing/proyecto.yml"
+    prefix:   /proyecto
+
+prueba:
+    path:     /prueba
+    defaults: { _controller: "GeneralBundle:Proyecto:prueba" }

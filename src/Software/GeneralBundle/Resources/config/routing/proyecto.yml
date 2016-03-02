@@ -1,0 +1,30 @@
+proyecto:
+    path:     /
+    defaults: { _controller: "GeneralBundle:Proyecto:index" }
+
+proyecto_show:
+    path:     /{id}/show
+    defaults: { _controller: "GeneralBundle:Proyecto:show" }
+
+proyecto_new:
+    path:     /new
+    defaults: { _controller: "GeneralBundle:Proyecto:new" }
+
+proyecto_create:
+    path:     /create
+    defaults: { _controller: "GeneralBundle:Proyecto:create" }
+    methods:  POST
+
+proyecto_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GeneralBundle:Proyecto:edit" }
+
+proyecto_update:
+    path:     /{id}/update
+    defaults: { _controller: "GeneralBundle:Proyecto:update" }
+    methods:  [POST, PUT]
+
+proyecto_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GeneralBundle:Proyecto:delete" }
+    methods:  [POST, DELETE]

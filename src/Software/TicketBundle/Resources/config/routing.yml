@@ -1,0 +1,7 @@
+ticket_ticket:
+    resource: "@TicketBundle/Resources/config/routing/ticket.yml"
+    prefix:   /ticket
+
+ticket_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: TicketBundle:Default:index }

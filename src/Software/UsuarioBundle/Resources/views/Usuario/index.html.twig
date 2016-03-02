@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    {% block form -%}
+        {{ render (controller('UsuarioBundle:Usuario:new')) }}
+    {% endblock %}
+
+   <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light ">
+                <div class="portlet-title">
+                    <div class="caption font-dark">
+                            <span class="caption-subject bold uppercase"> Lista Usuarios</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_2">
+                        <thead>
+                            <tr>
+                                <th class="oculto">Id</th>
+                                <th>Nombre</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        {% block lista -%}
+                            {{ render(controller('UsuarioBundle:Usuario:listado')) }}
+                        {% endblock %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    {% block form -%}
+        {{ render (controller('TicketBundle:Ticket:new')) }}
+    {% endblock %}
+
+   <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light ">
+                <div class="portlet-title">
+                    <div class="caption font-dark">
+                            <span class="caption-subject bold uppercase"> Tickets</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_2">
+                        <thead>
+                            <tr>
+                                <th class="oculto">Id</th>
+                                <th>Sistemaoperativo</th>
+                                <th>Navegador</th>
+                                <th>Url</th>
+                                <th>Descripcion</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        {{ render(controller('TicketBundle:Ticket:listado')) }}
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
