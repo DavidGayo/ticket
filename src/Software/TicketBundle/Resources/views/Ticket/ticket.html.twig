@@ -2,7 +2,6 @@
 
 {% block body -%}
 
-<pre>{{dump(ticket)}}</pre>
 	<div class="col-md-12 col-sm-12">
         <div class="portlet light ">
             <div class="portlet-title tabbable-line">
@@ -28,60 +27,10 @@
                     
                         <div class="mt-actions">
 
-                            <div class="mt-action">
-                                <div class="mt-action-img">
-                                    <img src=""> 
-                                </div>
-                                <div class="mt-action-body">
-                                	<div class="mt-action-row">
-                                        <div class="mt-action-info ">
-                                            <div class="mt-action-icon ">
-                                                <i class=" icon-bubbles"></i>
-                                            </div>
-                                            <div class="mt-action-details ">
-                                                <span class="mt-action-author">{{usuario.nombre}}</span>
-                                                <p class="mt-action-desc">pending for approval pending for approval pending for approval pending for approval</p>
-                                            </div>
-                                        </div>
-                                        <div class="mt-action-buttons ">
-                                            <div class="btn-group btn-group-circle">
-                                                <button type="button" class="btn btn-outline green btn-sm">Appove</button>
-                                                <button type="button" class="btn btn-outline red btn-sm">Reject</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-action">
-                                <div class="mt-action-img">
-                                    <img src=""> 
-                                </div>
-                                <div class="mt-action-body">
-                                    <div class="mt-action-row">
-                                        <div class="mt-action-info ">
-                                            <div class="mt-action-icon ">
-                                                <i class="icon-magnet"></i>
-                                            </div>
-                                            <div class="mt-action-details ">
-                                               	<span class="mt-action-author">yo</span>
-                                                <p class="mt-action-desc">approval</p>
-                                            </div>
-                                        </div>
-                                        <div class="mt-action-datetime ">
-                                            <span class="mt-action-date">3 jun</span>
-                                            <span class="mt-action-dot bg-green"></span>
-                                            <span class="mt=action-time">9:30-13:00</span>
-                                        </div>
-                                        <div class="mt-action-buttons ">
-                                            <div class="btn-group btn-group-circle">
-                                                <button type="button" class="btn btn-outline green btn-sm">Appove</button>
-                                                <button type="button" class="btn btn-outline red btn-sm">Reject</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% block nuevo -%}
+                                {{ render(controller('TicketBundle:Ticket:nuevoTicket')) }}
+                            {% endblock %}
+                           
                                                                                     
                          </div>                
                     </div>
@@ -89,35 +38,10 @@
                     <div class="tab-pane" id="tab_no_aplica">
                                           
                       	<div class="mt-actions">
-                            <div class="mt-action">
-                                <div class="mt-action-img">
-                                    <img src=""> 
-                                </div>
-                                <div class="mt-action-body">
-                                    <div class="mt-action-row">
-                                        <div class="mt-action-info ">
-                                            <div class="mt-action-icon ">
-                                                <i class="icon-action-redo"></i>
-                                            </div>
-                                            <div class="mt-action-details ">
-                                                <span class="mt-action-author">Frank Cameron</span>
-                                                <p class="mt-action-desc">pending for approval pending for approval pending for approval pending for approval</p>
-                                            </div>
-                                        </div>
-                                        <div class="mt-action-datetime ">
-                                            <span class="mt-action-date">3 jun</span>
-                                            <span class="mt-action-dot bg-red"></span>
-                                            <span class="mt=action-time">9:30-13:00</span>
-                                        </div>
-                                        <div class="mt-action-buttons ">
-                                            <div class="btn-group btn-group-circle">
-                                                <button type="button" class="btn btn-outline green btn-sm">Appove</button>
-                                                <button type="button" class="btn btn-outline red btn-sm">Reject</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            {% block noAplica -%}
+                                {{ render(controller('TicketBundle:Ticket:noAplica')) }}
+                            {% endblock %}
                                                 
                         </div>
                     </div>
@@ -125,36 +49,11 @@
                     <div class="tab-pane" id="tab_resuelto">
                                           
                       	<div class="mt-actions">
-                            <div class="mt-action">
-                                <div class="mt-action-img">
-                                    <img src=""> 
-                                </div>
-                                <div class="mt-action-body">
-                                    <div class="mt-action-row">
-                                        <div class="mt-action-info ">
-                                            <div class="mt-action-icon ">
-                                                <i class="icon-action-redo"></i>
-                                            </div>
-                                            <div class="mt-action-details ">
-                                                <span class="mt-action-author">Frank Cameron</span>
-                                                <p class="mt-action-desc">pending for approval pending for approval pending for approval pending for approval</p>
-                                            </div>
-                                        </div>
-                                        <div class="mt-action-datetime ">
-                                            <span class="mt-action-date">3 jun</span>
-                                            <span class="mt-action-dot bg-red"></span>
-                                            <span class="mt=action-time">9:30-13:00</span>
-                                        </div>
-                                        <div class="mt-action-buttons ">
-                                            <div class="btn-group btn-group-circle">
-                                                <button type="button" class="btn btn-outline green btn-sm">Appove</button>
-                                                <button type="button" class="btn btn-outline red btn-sm">Reject</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                                                
+
+                            {% block resuelto -%}
+                                {{ render(controller('TicketBundle:Ticket:resuelto')) }}
+                            {% endblock %}
+                         
                         </div>
                     </div>
 
