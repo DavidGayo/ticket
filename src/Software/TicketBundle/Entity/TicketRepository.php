@@ -15,10 +15,23 @@ class TicketRepository extends \Doctrine\ORM\EntityRepository
 		return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t WHERE t.usuarioCreo = :id')->setParameter('id', $id)->getResult();
 	}*/
 
-	public function misticket($id)
-	{
-		return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t LEFT JOIN t.proyecto p INNER JOIN p.usuario u WHERE p.id = :id')->setParameter('id',$id)->getResult();
-	}
+	public function nuevoTicket($id)
+    {
+     	$query = $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u  INNER JOIN u.proyecto p WHERE t.proyecto = p.id  AND u.id = :id AND t.aplica = \'f\' AND t.resuelto = \'f\'')->setParameter('id',$id)->getResult();
+  		return $query;
+    }
+
+    public function noAplica($id)
+    {
+     	$query = $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u  INNER JOIN u.proyecto p WHERE t.proyecto = p.id  AND u.id = :id AND t.aplica = \'t\'')->setParameter('id',$id)->getResult();
+  		return $query;
+    } 
+
+    public function resuelto($id)
+    {
+     	$query = $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u  INNER JOIN u.proyecto p WHERE t.proyecto = p.id  AND u.id = :id AND t.resuelto = \'t\'')->setParameter('id',$id)->getResult();
+  		return $query;
+    }
 
 	public function creados($id)
 	{
