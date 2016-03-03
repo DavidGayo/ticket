@@ -10,14 +10,4 @@ namespace Software\GeneralBundle\Entity;
  */
 class ProyectoRepository extends \Doctrine\ORM\EntityRepository
 {
-	public function ola($id)
-    {
-        //$query = $this->getEntityManager()->createQuery('SELECT p.id FROM UsuarioBundle:Usuario u INNER JOIN u.proyecto p WHERE u.id= :id')->setParameter('id',$id)->getResult();
-    	//$query = $this->getEntityManager()->createQuery('SELECT p.nombre AS proyecto, u.nombre AS usuario  FROM UsuarioBundle:Usuario u INNER JOIN GeneralBundle:Proyecto p WITH p.usuario = :id WHERE u.id= :id')->setParameter('id',$id)->getResult();
-        $query = $this->getEntityManager()->createQuery('SELECT p.nombre AS proyecto, u.nombre AS usuario FROM UsuarioBundle:Usuario u  JOIN u.proyecto p WITH u.id = :id ')->setParameter('id',$id)->getResult();
-        //return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t LEFT JOIN t.proyecto p WHERE p.id = :id')->setParameter('id',$ja)->getResult();
-  		return $query;
-    } 
-
-    
 }
