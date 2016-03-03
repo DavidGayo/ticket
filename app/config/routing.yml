@@ -22,4 +22,4 @@ logout:
 
 tickets:
     pattern:  /
-    defaults: {_controller:TicketBundle:Ticket:nuevoTicket }
+    defaults: {_controller:TicketBundle:Ticket:ticket }
