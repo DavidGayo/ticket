@@ -1,0 +1,27 @@
+ {% for entity in entities %}
+    <div class="mt-action">
+        <div class="mt-action-img">
+            <img src=""> 
+        </div>
+        <div class="mt-action-body">
+            <div class="mt-action-row">
+                <div class="mt-action-info ">
+                    <div class="mt-action-icon ">
+                        <i class=" icon-bubbles"></i>
+                    </div>
+                    <div class="mt-action-details ">
+                        <span class="mt-action-author">{{entity.proyecto}}</span>
+                        <p class="mt-action-desc">{{entity.descripcion}}</p>
+                    </div>
+                </div>
+                <div class="mt-action-buttons ">
+                    <div class="btn-group btn-group-circle">
+                        <a href="{{ path('ticket_resuelto', { 'id': entity.id }) }}" class="btn btn-outline green btn-sm">Resuelto</a>
+                        <a href="{{ path('ticket_noaplica', { 'id': entity.id }) }}" class="btn btn-outline red btn-sm">No aplica</a>
+                        <a href="{{ path('ticket_show', { 'id': entity.id }) }}" class="btn btn-outline yellow btn-sm">Ver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
