@@ -30,5 +30,13 @@ ticket_delete:
     methods:  [POST, DELETE]
 
 mi_ticket:
-    path: /miticket
-    defaults: {_controller: "TicketBundle:Ticket:miticket"}
+    path: /nuevoticket
+    defaults: {_controller: "TicketBundle:Ticket:ticket"}
+
+ticket_noaplica:
+    path:     /{id}/noaplica
+    defaults: { _controller: "TicketBundle:Ticket:aplica" }
+
+ticket_resuelto:
+    path:     /{id}/resuelto
+    defaults: { _controller: "TicketBundle:Ticket:resueltos" }
