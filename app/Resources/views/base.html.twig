@@ -116,16 +116,28 @@
                 <div class="page-sidebar navbar-collapse collapse">
                     <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                        <li id="ticket" class="nav-item">
-                            <a href="{{ path('ticket') }}" class="nav-link nav-toggle">
-                                <i class="fa fa-opencart"></i>
+                            <a href="" class="nav-link nav-toggle">
+                                <i class="fa fa-ticket"></i>
                                 <span class="title">Ticket</span>
                                 <span class="arrow"></span>
                                 <span id="ven" class=""></span>
                             </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{ path('ticket') }}" class="nav-link ">
+                                        <span class="title">Nuevo ticket</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('mi_ticket') }}" class="nav-link ">
+                                        <span class="title">Mis ticket</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li id="proyecto" class="nav-item">
                             <a href="{{ path('proyecto') }}" class="nav-link nav-toggle">
-                                <i class="fa fa-opencart"></i>
+                                <i class="fa fa-rocket"></i>
                                 <span class="title">Proyecto</span>
                                 <span class="arrow"></span>
                                 <span id="ven" class=""></span>
