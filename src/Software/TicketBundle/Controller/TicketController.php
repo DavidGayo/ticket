@@ -37,15 +37,46 @@ class TicketController extends Controller
         ));
     }
 
-    public function miticketAction()
+    public function ticketAction()
+    {
+         return $this->render('TicketBundle:Ticket:ticket.html.twig');
+    }
+
+    public function nuevoTicketAction()
     {
         $em = $this->getDoctrine()->getManager();
         $user = $this->container->get('security.context')->getToken()->getUser();
         $logeado = $em->getRepository('UsuarioBundle:Usuario')->find($user->getId());
-        $miticket = $em->getRepository('TicketBundle:ticket')->misticket($user->getId());
+        $miticket = $em->getRepository('TicketBundle:ticket')->nuevoTicket($user->getId());
 
-        return $this->render('TicketBundle:Ticket:ticket.html.twig',array(
-            "ticket" => $miticket,
+        return $this->render('TicketBundle:Ticket:nuevoticket.html.twig',array(
+            "entities" => $miticket,
+            "usuario" => $logeado,
+            ));
+    }
+
+    public function noAplicaAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $logeado = $em->getRepository('UsuarioBundle:Usuario')->find($user->getId());
+        $miticket = $em->getRepository('TicketBundle:ticket')->noAplica($user->getId());
+
+        return $this->render('TicketBundle:Ticket:noaplica.html.twig',array(
+            "entities" => $miticket,
+            "usuario" => $logeado,
+            ));
+    }
+
+    public function resueltoAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $logeado = $em->getRepository('UsuarioBundle:Usuario')->find($user->getId());
+        $miticket = $em->getRepository('TicketBundle:ticket')->resuelto($user->getId());
+
+        return $this->render('TicketBundle:Ticket:resuelto.html.twig',array(
+            "entities" => $miticket,
             "usuario" => $logeado,
             ));
     }
@@ -207,6 +238,33 @@ class TicketController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
+    public function aplicaAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('TicketBundle:Ticket')->find($id);
+
+            $entity ->setAplica('t');
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('mi_ticket'));
+    }
+
+    public function resueltosAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('TicketBundle:Ticket')->find($id);
+
+            $entity ->setResuelto('t');
+            $em->persist($entity);
+            $em->flush();
+            
+            return $this->redirect($this->generateUrl('mi_ticket'));
+    }
+
     /**
      * Deletes a Ticket entity.
      *
