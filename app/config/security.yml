@@ -66,5 +66,7 @@ security:
     access_control:
     # NOTA: LAS RESTRICCIONES DE ACCESO TAMBIÉN ESTÁN DECLARADAS EN LOS CONTROLADORES
     - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/proyecto/*, roles: ROLE_SUPER_ADMIN }
     - { path: ^/*, roles: [ROLE_USER,ROLE_SUPER_ADMIN] }
+
 
