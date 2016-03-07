@@ -36,6 +36,7 @@
         <link href="{{ asset('public/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css" />#}
 
         <link rel="shortcut icon" href="favicon.ico" /> 
+        {% block css %}{% endblock css %}
     </head>
     <!-- END HEAD -->
 
@@ -135,6 +136,7 @@
                                 </li>
                             </ul>
                         </li>
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
                         <li id="proyecto" class="nav-item">
                             <a href="{{ path('proyecto') }}" class="nav-link nav-toggle">
                                 <i class="fa fa-rocket"></i>
@@ -143,6 +145,7 @@
                                 <span id="ven" class=""></span>
                             </a>
                         </li>
+                        {% endif %}
                         <li id="usuario" class="nav-item">
                             <a href="{{ path('usuario') }}" class="nav-link nav-toggle">
                                 <i class="fa fa-user"></i>
