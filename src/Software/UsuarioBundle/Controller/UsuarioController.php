@@ -27,7 +27,10 @@ class UsuarioController extends Controller
     public function listadoAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $entities = $em->getRepository('UsuarioBundle:Usuario')->findAll();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $logeado = $em->getRepository('UsuarioBundle:Usuario')->find($user->getId());
+        $id = $logeado->getid();
+        $entities = $em->getRepository('UsuarioBundle:Usuario')->miUsuario($id);
         return $this->render('UsuarioBundle:Usuario:listado.html.twig', array(
             'entities' => $entities,
         ));
