@@ -26,7 +26,7 @@ class UsuarioType extends AbstractType
                     'second_options' => array('label' => 'Repite password')))
             ->add('rol', 'choice', array(
                 'choices' => array(
-                    'ROLE_ADMIN' => 'Administrador', 
+                    'ROLE_SUPER_ADMIN' => 'Administrador', 
                     'ROLE_USER' => 'Usuario', 
                     )
                 ))
