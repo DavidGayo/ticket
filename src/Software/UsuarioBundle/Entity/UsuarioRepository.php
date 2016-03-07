@@ -56,5 +56,10 @@ class UsuarioRepository extends EntityRepository implements UserProviderInterfac
             || is_subclass_of($class, $this->getEntityName());
     }
 
+    public function miUsuario($id)
+    {
+        return $this->getEntityManager()->createQuery('SELECT u FROM UsuarioBundle:Usuario u WHERE u.id = :id')->setParameter('id',$id)->getResult();
+    } 
+
     
 }
