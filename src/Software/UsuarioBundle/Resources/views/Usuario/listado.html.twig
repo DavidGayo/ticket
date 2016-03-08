@@ -3,6 +3,7 @@
         <tr>
             <td class="oculto"><a href="{{ path('usuario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.userName }}</td>
+            <td>{{ entity.nombre}}</td>
             <td>{{ entity.rol }}</td>
             <td>
                 <a href="{{ path('usuario_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
