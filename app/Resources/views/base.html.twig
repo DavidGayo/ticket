@@ -66,8 +66,8 @@
                         </button>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="">
-                                    <i class="icon-tag"></i> Nuevo aviso</a>
+                                <a href="{{ path('ticket') }}">
+                                    <i class="icon-tag"></i> Nuevo ticket</a>
                             </li>
                         </ul>
                     </div>
@@ -149,11 +149,21 @@
                         <li id="usuario" class="nav-item">
                             <a href="{{ path('usuario') }}" class="nav-link nav-toggle">
                                 <i class="fa fa-user"></i>
+                                <span class="title">Usuario</span>
+                                <span class="arrow"></span>
+                                <span id="ven" class=""></span>
+                            </a>
+                        </li>
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
+                         <li id="usuario" class="nav-item">
+                            <a href="{{ path('usuarios') }}" class="nav-link nav-toggle">
+                                <i class="fa fa-users"></i>
                                 <span class="title">Usuarios</span>
                                 <span class="arrow"></span>
                                 <span id="ven" class=""></span>
                             </a>
                         </li>
+                        {% endif %}
                     </ul>
                     <!-- END SIDEBAR MENU -->
                 </div>
