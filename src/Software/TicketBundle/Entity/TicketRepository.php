@@ -37,4 +37,9 @@ class TicketRepository extends \Doctrine\ORM\EntityRepository
 	{
 		return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t WHERE t.usuarioCreo = :id')->setParameter('id',$id)->getResult();
 	}
+
+  public function todosTicket($id)
+  {
+    return $this->getEntityManager()->createQuery('SELECT t AS ticket, u.userName AS usuario FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u WHERE t.usuarioCreo = u.id AND t.id = :id')->setParameter('id',$id)->getResult();
+  }
 }
