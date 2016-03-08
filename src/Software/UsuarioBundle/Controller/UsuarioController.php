@@ -175,6 +175,7 @@ class UsuarioController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('UsuarioBundle:Usuario')->find($id);
+        $rol = $entity->getRol();  
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Usuario entity.');
@@ -192,6 +193,7 @@ class UsuarioController extends Controller
             $encoder = $this->container->get('security.password_encoder');
             $encoded = $encoder->encodePassword($entity,$plainPassword);
             $entity->setPassword($encoded);
+            $entity->setRol($rol);
 
             $em->flush();
 
