@@ -1,0 +1,106 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h2><a href="{{ path('mi_ticket') }}">
+                 Mi Ticket:
+                </a>
+                Vista
+            </h2>
+        </div>
+    </div>
+
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <h2 class="alert-success">{{ flashMessage }} </h2>
+        <br /><br />
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light portlet-fit ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-eye font-yellow"></i>
+                        <span class="caption-subject font-yellow bold uppercase">Caracteristicas</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="general-item-list">
+                    {% for entity in entities %}
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Proyecto
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.ticket.proyecto }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Sistema Operativo:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.ticket.sistemaOperativo }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Navegador:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.ticket.navegador }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    URL:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.ticket.url }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Descripcion:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.ticket.descripcion }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Realizo:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.usuario }}
+                                </div>
+                            </div>
+                        </div><br />
+                        <div class="mt-action-buttons ">
+                            <div class="btn-group btn-group-circle">
+                                <a href="{{ path('ticket_resuelto', { 'id': entity.ticket.id }) }}" class="btn btn-outline green btn-sm">Resuelto</a>
+                                <a href="{{ path('ticket_noaplica', { 'id': entity.ticket.id }) }}" class="btn btn-outline red btn-sm">No aplica</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
