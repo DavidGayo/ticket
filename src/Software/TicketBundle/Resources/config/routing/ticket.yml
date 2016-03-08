@@ -40,3 +40,7 @@ ticket_noaplica:
 ticket_resuelto:
     path:     /{id}/resuelto
     defaults: { _controller: "TicketBundle:Ticket:resueltos" }
+
+vista_misticket:
+    path: /{id}/misticket/show
+    defaults: {_controller: "TicketBundle:Ticket:misTicketShow" }
