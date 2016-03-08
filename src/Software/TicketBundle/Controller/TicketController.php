@@ -166,6 +166,20 @@ class TicketController extends Controller
         ));
     }
 
+    public function misTicketShowAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('TicketBundle:Ticket')->todosTicket($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Ticket entity.');
+        }
+
+        return $this->render('TicketBundle:Ticket:misticketshow.html.twig', array(
+            'entities'  => $entity,
+        ));
+    }
+
     /**
      * Displays a form to edit an existing Ticket entity.
      *
@@ -246,6 +260,7 @@ class TicketController extends Controller
         $entity = $em->getRepository('TicketBundle:Ticket')->find($id);
 
             $entity ->setAplica('t');
+            $entity ->setResuelto('f');
             $em->persist($entity);
             $em->flush();
 
@@ -259,6 +274,7 @@ class TicketController extends Controller
         $entity = $em->getRepository('TicketBundle:Ticket')->find($id);
 
             $entity ->setResuelto('t');
+            $entity ->setAplica('f');
             $em->persist($entity);
             $em->flush();
             
