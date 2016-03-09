@@ -18,20 +18,20 @@ class TicketType extends AbstractType
             ->add('proyecto')
             ->add('sistemaOperativo','choice',array(
                 'choices'=>array(
-                    'Ubunto 12'=>'Ubunto 12',
-                    'Ubunto 13'=>'Ubunto 13',
-                    'Ubunto 14'=>'Ubunto 14',
-                    'Ubunto 15'=>'Ubunto 15',
+                    'Ubuntu 12'=>'Ubuntu 12',
+                    'Ubuntu 13'=>'Ubuntu 13',
+                    'Ubuntu 14'=>'Ubuntu 14',
+                    'Ubuntu 15'=>'Ubuntu 15',
                     'Windows 7'=>'Windows 7',
                     'Windows 8'=>'Windows 8',
                     'Windows 10'=>'Windows 10',)))
             ->add('navegador','choice',array(
                 'choices'=>array(
-                    'Chrome'=>'Chorme',
+                    'Chrome'=>'Chrome',
                     'Chromium'=>'Chromium',
                     'Safari'=>'Safari',
                     'Firefox'=>'Firefox',
-                    'Explorer'=>'Windows 7',
+                    'Explorer'=>'Explorer',
                     )))
             ->add('url')
             ->add('descripcion')
