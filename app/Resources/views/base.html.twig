@@ -104,9 +104,7 @@
             <!-- END HEADER INNER -->
         </div>
         <!-- END HEADER -->
-        <!-- BEGIN HEADER & CONTENT DIVIDER -->
-        <div class="clearfix"> </div>
-        <!-- END HEADER & CONTENT DIVIDER -->
+       
         <!-- BEGIN CONTAINER -->
         <div class="page-container">
             <!-- BEGIN SIDEBAR -->
@@ -121,7 +119,7 @@
                                 <i class="fa fa-ticket"></i>
                                 <span class="title">Ticket</span>
                                 <span class="arrow"></span>
-                                <span id="ven" class=""></span>
+                                <span id="tic" class=""></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item">
@@ -141,8 +139,7 @@
                             <a href="{{ path('proyecto') }}" class="nav-link nav-toggle">
                                 <i class="fa fa-rocket"></i>
                                 <span class="title">Proyecto</span>
-                                <span class="arrow"></span>
-                                <span id="ven" class=""></span>
+                                <span id="pro" class=""></span>
                             </a>
                         </li>
                         {% endif %}
@@ -150,17 +147,15 @@
                             <a href="{{ path('usuario') }}" class="nav-link nav-toggle">
                                 <i class="fa fa-user"></i>
                                 <span class="title">Usuario</span>
-                                <span class="arrow"></span>
-                                <span id="ven" class=""></span>
+                                <span id="usu" class=""></span>
                             </a>
                         </li>
                         {% if is_granted('ROLE_SUPER_ADMIN') %}
-                         <li id="usuario" class="nav-item">
+                         <li id="usuarios" class="nav-item">
                             <a href="{{ path('usuarios') }}" class="nav-link nav-toggle">
                                 <i class="fa fa-users"></i>
                                 <span class="title">Usuarios</span>
-                                <span class="arrow"></span>
-                                <span id="ven" class=""></span>
+                                <span id="use" class=""></span>
                             </a>
                         </li>
                         {% endif %}
@@ -169,20 +164,24 @@
                 </div>
                 <!-- END SIDEBAR -->
             </div>
+
             <!-- END SIDEBAR -->
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">
                 <div class="page-content">
-                 
-                    {% block body %}
-                    {% endblock %}
+                    <div class="page-bar">
+                        {% block body %}
+                        {% endblock %}    
+                    </div>
+                    
 
                 </div>
-                <!-- END CONTENT BODY -->
-
             </div>
 
         </div>
+        <a href="javascript:;" class="page-quick-sidebar-toggler">
+            <i class="icon-login"></i>
+        </a>
         <!-- END CONTAINER -->
         <!-- BEGIN FOOTER -->
         <div class="page-footer">
