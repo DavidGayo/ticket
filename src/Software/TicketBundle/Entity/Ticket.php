@@ -43,7 +43,7 @@ class Ticket
     private $resuelto;
 
     /**
-     * @var boolean
+     * @var integer
      */
     private $usuarioCreo;
 

@@ -25,7 +25,9 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        {{ render(controller('TicketBundle:Ticket:listado')) }}
+                        {% block lista -%}
+                            {{ render(controller('TicketBundle:Ticket:listado')) }}
+                        {% endblock %}
                     </table>
 
                 </div>
