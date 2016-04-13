@@ -22,7 +22,7 @@ class ImagenType extends AbstractType
                                 'data-min-file-count' => '1' ),
                 'data_class' => null,
                 'property_path' => 'imagen',
-                'required' => false,
+                'required' => true,
                 ))
         ;
     }
