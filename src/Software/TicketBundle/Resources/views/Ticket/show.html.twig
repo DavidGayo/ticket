@@ -78,6 +78,19 @@
                                     {{ entity.descripcion }}
                                 </div>
                             </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Imagen:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {% if entity.imagen == NULL  %}
+                                    {% else %}
+                                        <img src="{{ asset('uploads/img/')}}{{ entity.imagen.path }}" width="100%">
+                                    {% endif %}
+                                </div>
+                            </div>
                         </div><br />
 
                         {{ form(delete_form) }}
