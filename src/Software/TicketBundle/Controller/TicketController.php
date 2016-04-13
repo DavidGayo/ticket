@@ -92,7 +92,9 @@ class TicketController extends Controller
         $user = $this->container->get('security.context')->getToken()->getUser();
         
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager(); 
+            $em = $this->getDoctrine()->getManager();
+            $entity->getImagen()->upload();
+            $entity->getImagen()->setMetatags(urlencode($entity->getUsuarioCreo())); 
             $logeado = $em->getRepository('UsuarioBundle:Usuario')->find($user->getId());   
             $usuario = $logeado->getid();
             $entity -> setAplica('f');
@@ -241,9 +243,11 @@ class TicketController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+           
+            $entity->getImagen()->upload();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('ticket_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ticket'));
         }
 
         return $this->render('TicketBundle:Ticket:edit.html.twig', array(
