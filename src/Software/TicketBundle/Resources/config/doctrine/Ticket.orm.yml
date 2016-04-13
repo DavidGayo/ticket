@@ -33,10 +33,7 @@ Software\TicketBundle\Entity\Ticket:
             joinColumn:
                 name: proyecto_id
                 referencedColumnName: id
-        #usuario:
-            #targetEntity: Software\UsuarioBundle\Entity\Usuario
-            #inversedBy: ticket
-            #joinColumn:
-                #name: usuario_id
-                #referencedColumnName: id
+        imagen:
+            targetEntity: Software\TicketBundle\Entity\Imagen
+            cascade: ["persist"]
     lifecycleCallbacks: {  }
