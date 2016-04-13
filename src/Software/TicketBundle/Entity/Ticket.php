@@ -255,4 +255,33 @@ class Ticket
         return $this->proyecto;
     }
     
+    /**
+     * @var \Software\TicketBundle\Entity\Imagen
+     */
+    private $imagen;
+
+
+    /**
+     * Set imagen
+     *
+     * @param \Software\TicketBundle\Entity\Imagen $imagen
+     *
+     * @return Ticket
+     */
+    public function setImagen(\Software\TicketBundle\Entity\Imagen $imagen = null)
+    {
+        $this->imagen = $imagen;
+
+        return $this;
+    }
+
+    /**
+     * Get imagen
+     *
+     * @return \Software\TicketBundle\Entity\Imagen
+     */
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
 }
