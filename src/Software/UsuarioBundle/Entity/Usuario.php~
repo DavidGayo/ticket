@@ -190,4 +190,50 @@ class Usuario implements UserInterface
         return $permisos;
     }
    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $proyecto;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->proyecto = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add proyecto
+     *
+     * @param \Software\GeneralBundle\Entity\Proyecto $proyecto
+     *
+     * @return Usuario
+     */
+    public function addProyecto(\Software\GeneralBundle\Entity\Proyecto $proyecto)
+    {
+        $this->proyecto[] = $proyecto;
+
+        return $this;
+    }
+
+    /**
+     * Remove proyecto
+     *
+     * @param \Software\GeneralBundle\Entity\Proyecto $proyecto
+     */
+    public function removeProyecto(\Software\GeneralBundle\Entity\Proyecto $proyecto)
+    {
+        $this->proyecto->removeElement($proyecto);
+    }
+
+    /**
+     * Get proyecto
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProyecto()
+    {
+        return $this->proyecto;
+    }
 }
