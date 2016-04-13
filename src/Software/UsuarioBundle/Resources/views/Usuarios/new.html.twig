@@ -48,7 +48,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group form-md-line-input has-success">
                                             <div class="input-icon">
-                                                {{ form_widget(form.password.first,{'attr': {'class':'form-control','placeholder': 'Password'}}) }}
+                                                {{ form_widget(form.password.first,{'attr': {'class':'form-control','placeholder': 'Password'},'required':'true'}) }}
                                                 <label for="passwordfirst">Password</label>
                                                 <i class="fa fa-lock"></i>
                                             </div>
@@ -57,7 +57,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group form-md-line-input has-success">
                                             <div class="input-icon">
-                                                {{ form_widget(form.password.second,{'attr': {'class':'form-control','placeholder': 'Confirmar password'}}) }}
+                                                {{ form_widget(form.password.second,{'attr': {'class':'form-control','placeholder': 'Confirmar password'},'required':'true'}) }}
                                                 <label for="passwordsecond">Confirmar password</label>
                                                 <i class="fa fa-unlock"></i>
                                             </div>
