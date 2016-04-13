@@ -37,6 +37,7 @@ class TicketType extends AbstractType
             ->add('descripcion')
             ->add('aplica')
             ->add('resuelto')
+            ->add('imagen', new ImagenType())
         ;
     }
     
