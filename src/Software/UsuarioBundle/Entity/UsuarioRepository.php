@@ -61,5 +61,10 @@ class UsuarioRepository extends EntityRepository implements UserProviderInterfac
         return $this->getEntityManager()->createQuery('SELECT u FROM UsuarioBundle:Usuario u WHERE u.id = :id')->setParameter('id',$id)->getResult();
     } 
 
+    public function pass($id)
+    {
+        return $this->getEntityManager()->createQuery('SELECT u.password AS password FROM UsuarioBundle:Usuario u WHERE u.id = :id')->setParameter('id',$id)->getResult();
+    }
+
     
 }
