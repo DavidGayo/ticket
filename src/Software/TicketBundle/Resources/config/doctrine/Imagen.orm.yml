@@ -1,0 +1,21 @@
+Software\TicketBundle\Entity\Imagen:
+    type: entity
+    table: null
+    repositoryClass: Software\TicketBundle\Entity\ImagenRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        imagen:
+            type: string
+            length: '120'
+        path:
+            type: string
+            length: '120'
+        metatags:
+            type: string
+            length: '120'
+    lifecycleCallbacks: {  }
