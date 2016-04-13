@@ -188,12 +188,23 @@ class UsuarioController extends Controller
         if ($editForm->isValid()) {
 
             // Encode password
-            $entity->setSalt(md5(time()));
             $plainPassword = $editForm->get('password')->getData();
+
+            if (!empty($password))
+            {
+            // Encode password
             $encoder = $this->container->get('security.password_encoder');
-            $encoded = $encoder->encodePassword($entity,$plainPassword);
+            $encoded = $encoder->encodePassword($entity, $plainPassword);
             $entity->setPassword($encoded);
             $entity->setRol($rol);
+            $entity->setSalt(md5(time()));
+            }
+            else
+            {
+                $recuperarPass = $em->getRepository('UsuarioBundle:Usuario')->pass($id);
+                $entity->setPassword($recuperarPass[0]['password']);
+                $entity->setRol($rol); 
+            }
 
             $em->flush();
 
