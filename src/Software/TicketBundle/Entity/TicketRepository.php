@@ -17,19 +17,19 @@ class TicketRepository extends \Doctrine\ORM\EntityRepository
 
 	public function nuevoTicket($id)
     {
-     	$query = $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u  INNER JOIN u.proyecto p WHERE t.proyecto = p.id  AND u.id = :id AND t.aplica = \'f\' AND t.resuelto = \'f\'')->setParameter('id',$id)->getResult();
+     	$query = $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u  INNER JOIN u.proyecto p WHERE t.proyecto = p.id  AND u.id = :id AND t.aplica = \'f\' AND t.resuelto = \'f\' ORDER BY t.id DESC')->setParameter('id',$id)->getResult();
   		return $query;
     }
 
     public function noAplica($id)
     {
-     	$query = $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u  INNER JOIN u.proyecto p WHERE t.proyecto = p.id  AND u.id = :id AND t.aplica = \'t\'')->setParameter('id',$id)->getResult();
+     	$query = $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u  INNER JOIN u.proyecto p WHERE t.proyecto = p.id  AND u.id = :id AND t.aplica = \'t\' ORDER BY t.id DESC')->setParameter('id',$id)->getResult();
   		return $query;
     } 
 
     public function resuelto($id)
     {
-     	$query = $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u  INNER JOIN u.proyecto p WHERE t.proyecto = p.id  AND u.id = :id AND t.resuelto = \'t\'')->setParameter('id',$id)->getResult();
+     	$query = $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t, UsuarioBundle:Usuario u  INNER JOIN u.proyecto p WHERE t.proyecto = p.id  AND u.id = :id AND t.resuelto = \'t\' ORDER BY t.id DESC')->setParameter('id',$id)->getResult();
   		return $query;
     }
 
