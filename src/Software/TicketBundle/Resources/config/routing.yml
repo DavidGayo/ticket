@@ -1,3 +1,7 @@
+ticket_imagen:
+    resource: "@TicketBundle/Resources/config/routing/imagen.yml"
+    prefix:   /imagen
+
 ticket_ticket:
     resource: "@TicketBundle/Resources/config/routing/ticket.yml"
     prefix:   /ticket
